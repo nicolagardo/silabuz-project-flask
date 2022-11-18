@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<body style="background-color:rgb(201, 201, 201);"">
+<h1 class="h1">{{ perfil }}</h1>
+<form action="{{ url_for("editarusuario") }}" method="post">
+    <div class=" col-6 col-sm-4" >
+        <label for="inputEmail4" class="form-label ">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombreR" value="{{ perfil.nombre }}">
+    </div>
+
+
+    <div class="col-6 col-sm-4">
+        <label for="locacion" class="form-label ">Locación</label>
+        <input type="text" class="form-control" id="locacion" name="locacionR" value="{{perfil.locacion }}">
+    </div>
+
+    <div class="col-6 col-sm-4">
+        <label for="informacion" class="form-label  ">Informacion</label>
+        <input type="text" class="form-control" id="informacion" name="informacionR" value="{{ perfil.informacion }}">
+    </div>
+<div class="d-grid col-6 col-sm-4">
+    <button class="btn btn-outline-dark" type="submit" style="margin: 10px;"">Actualizar</button>
+</div>
+</form>
+<div class="btn-group">
+<a href="{{ url_for("logout") }}" class="btn btn-primary" >Desconectarse</a>
+<a href="{{ url_for("actualizar") }}" class="btn btn-primary" >Actualizar</a>
+<a href="{{ url_for("eliminar") }}" class="btn btn-primary" >Eliminando</a>
+<a href="{{ url_for("usuario") }}" class="btn btn-primary" >Perfil   </a><br>
+</div>
+</div>
+</div>
+</body>
+</html>

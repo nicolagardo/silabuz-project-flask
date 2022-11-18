@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Bienvenido!</title>
+</head>
+<body>
+<h1>{{ user }}</h1>
+</br>
+<h1>{{ profile }}</h1>
+<section class="vh-100" style="background-color: #9de2ff;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-md-9 col-lg-7 col-xl-5">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-4">
+              <div class="d-flex text-black">
+                <div class="flex-shrink-0">
+                  <img src="{{ profile.avatar }}" alt="gravatar" class="img-fluid"
+                  style="width: 180px; border-radius: 10px;">
+                </div>
+
+                <div class="flex-grow-1 ms-3">
+                    <h2 class="mb-1">{{  profile.nombre }} de {{ profile.locacion }}</h2>
+                    <h3 class="mb-2">{{ profile.informacion }}</h3>
+                    <h4 class="mb-3">Mienbro desde: {{ profile.fecha_creacion }}</h4>
+                    <h4 class="mb-4">Ultima conexion: {{ profile.ultima_conexion }}</h4>
+                    <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                  style="background-color: #efefef;">
+                    </div>
+
+                    <div>
+                        <a href="{{ url_for("editarusuario") }}" class="btn btn-primary">Editar perfil</a>
+                    </div>
+                        <a href="{{ url_for("logout") }}" class="btn btn-primary" >Desconectarse</a>
+                        <a href="{{ url_for("actualizar") }}" class="btn btn-primary" >Actualizar</a>
+                        <a href="{{ url_for("eliminar") }}" class="btn btn-primary" >Eliminar</a>
+                        <a href="{{ url_for("usuario") }}" class="btn btn-primary" >Perfil</a>
+                    </body>
+                </html>

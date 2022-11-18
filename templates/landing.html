@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body style="background-color:rgb(201, 201, 201);">
+    <h1>Llegaste al Landing Page, estado: {{ status }}</h1>
+    <br/>
+    <div class="btn-group">
+    <a href="{{ url_for("logout") }}" class="btn btn-primary" >Desconectarse</a>
+    <a href="{{ url_for("actualizar") }}" class="btn btn-primary" >Actualizar</a>
+    <a href="{{ url_for("eliminar") }}" class="btn btn-primary" >Eliminar</a>
+    <a href="{{ url_for("usuario") }}" class="btn btn-primary" >Perfil</a><br>
+    </div>
+    <div>
+        <img src="https://branch.com.co/wp-content/uploads/2021/05/infografia-para-que-sirve-las-landing-pages.png" width="365px" height="365px">
+    </div>       
+    </body>
+</html>

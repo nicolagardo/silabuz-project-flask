@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block content %}
+<div>
+  Microblog:
+  <a href="{{ url_for('index') }}">Home</a>
+  <a href="{{ url_for('logout') }}">Logout</a>
+  {% endif %}
+  <a
+    href="{{ url_for('user', username=current_user.username) }}"
+  >
+    Perfil
+  </a>
+</div>
+<h1>Bienvenido!</h1>
+
+<h3>Hola, {{ current_user.username }}!</h3>
+
+<div>
+  {% if current_user.can(WRITE) %}
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p class="form-body">
+      {{ form.body.label }}<br />
+      {{ form.body(size=32) }} {% for error in form.body.errors %}
+      <span style="color: red">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  {% endif %}
+</div>
+
+{% for post in posts %}
+<ul class="posts">
+  <l1 class="post">
+    <div>
+      <a href="{{url_for('user', username=post.author.username)}}">
+        <img class ="img-post" src="{{post.author.gravatar(size=40)}}" />
+      </a>
+    </div>
+    <div class="post-card">
+      <div class="post-info">
+      <div class="post-author">
+        <a href="{{url_for('user', username=post.author.username)}}">
+          {{ post.author.username }}
+        </a>
+      </div>
+      <div class="post-date">{{ moment(post.timestamp).fromNow() }}</div>
+    </div>
+    <div>{{ post.body }}</div>
+    </div>
+  </l1>
+</ul>
+{% endfor %} {% endblock %}
